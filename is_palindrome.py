@@ -1,43 +1,38 @@
 '''
 Prompt for a word and chack if it's a palindrome
 
-Ignores spaces and non-alpha characters in the comparision
+Ignores non-alpha characters in the comparision
 '''
+
+import re
 
 def is_palindrome(word):
     fpos = 0
-    rpos = len(word) - 1
+
+    ''' Remove non alpha and space characters and lowercase the input '''
+
+    cleanword = re.sub(r'[^a-zA-Z ]', '', word)
+    cleanword = cleanword.replace(' ', '').lower()
+    rpos = len(cleanword) - 1
 
     ''' We only need to check half of the string '''
 
-    while rpos > len(word) / 2 - 1:
+    while rpos > len(cleanword) / 2 - 1:
 
-        ''' Ignore non-alpha characters '''
-
-        if not word[fpos].isalpha():
-            fpos += 1
-            continue
-
-        if not word[rpos].isalpha():
-            rpos += 1
-            continue
-
-        ''' Compare the current character '''
-
-        if (word[fpos]) != (word[rpos]):
-            return False
+        if (cleanword[fpos]) != (cleanword[rpos]):
+            return [False, cleanword]
 
         fpos += 1
         rpos -= 1
 
-    return True
+    return [True, cleanword]
 
 print('-=[ P A L I N D R O M E T E R ]+-\n')
 word = input('Enter your word: ')
 
-response = is_palindrome(word.replace(' ','').lower())
+response, cleanword = is_palindrome(word)
 
 if response:
-    print(word, 'is a palindrome')
+    print(cleanword, 'is a palindrome')
 else:
-    print(word, 'is not a palindrome')
+    print(cleanword, 'is not a palindrome')
