@@ -11,8 +11,7 @@ def is_palindrome(word):
 
     ''' Remove non alpha and space characters and lowercase the input '''
 
-    cleanword = re.sub(r'[^a-zA-Z ]', '', word)
-    cleanword = cleanword.replace(' ', '').lower()
+    cleanword = re.sub(r'[^a-zA-Z]', '', word.lower())
     rpos = len(cleanword) - 1
 
     ''' We only need to check half of the string '''
