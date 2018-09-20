@@ -8,11 +8,11 @@ def is_palindrome(word):
     fpos = 0
     rpos = len(word) - 1
 
-''' We only need to check half of the string '''
+    ''' We only need to check half of the string '''
 
     while rpos > len(word) / 2 - 1:
 
-''' Ignore non-alpha characters '''
+        ''' Ignore non-alpha characters '''
 
         if not word[fpos].isalpha():
             fpos += 1
@@ -22,7 +22,7 @@ def is_palindrome(word):
             rpos += 1
             continue
 
-''' Compare the current character '''
+        ''' Compare the current character '''
 
         if (word[fpos]) != (word[rpos]):
             return False
