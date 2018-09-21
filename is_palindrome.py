@@ -2,6 +2,8 @@
 Prompt for a word and chack if it's a palindrome
 
 Ignores non-alpha characters in the comparision
+
+Returns a boolean indicating palindrome (true) or not (false) along with the sanitised input that was used for the comparison
 '''
 
 import re
