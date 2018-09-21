@@ -8,8 +8,8 @@ import re
 
 
 def is_palindrome(word):
-    # Remove non alpha and space characters and lowercase the input
 
+    # Remove non alpha and space characters and lowercase the input
     cleanword = re.sub(r'[^a-zA-Z]', '', word.lower())
 
     # Define our start and end points
@@ -17,7 +17,6 @@ def is_palindrome(word):
     rpos = len(cleanword) - 1
 
     # We only need to check half of the string
-
     while rpos > len(cleanword) / 2 - 1:
 
         if (cleanword[fpos]) != (cleanword[rpos]):
