@@ -6,17 +6,17 @@ Ignores non-alpha characters in the comparision
 
 import re
 
-def is_palindrome(word):
 
-    ''' Remove non alpha and space characters and lowercase the input '''
+def is_palindrome(word):
+    # Remove non alpha and space characters and lowercase the input
 
     cleanword = re.sub(r'[^a-zA-Z]', '', word.lower())
 
-    ''' Define our start and end points '''
+    # Define our start and end points
     fpos = 0
     rpos = len(cleanword) - 1
 
-    ''' We only need to check half of the string '''
+    # We only need to check half of the string
 
     while rpos > len(cleanword) / 2 - 1:
 
@@ -27,6 +27,7 @@ def is_palindrome(word):
         rpos -= 1
 
     return [True, cleanword]
+
 
 print('-=[ P A L I N D R O M E T E R ]+-\n')
 word = input('Enter your word: ')
